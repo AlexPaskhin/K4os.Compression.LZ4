@@ -45,11 +45,9 @@ Target "Sanitize" (fun _ ->
     let rules = Sanitizer.basicTypes
     let sanitize fn =
         printfn "Processing: %s" fn
-        Sanitizer.sanitize (sprintf "./orig/lib/%s" fn) (sprintf "./src/sanitized/%s" fn) rules
+        Sanitizer.sanitize (sprintf "./orig/current/lib/%s" fn) (sprintf "./src/sanitized/current/%s" fn) rules
     sanitize "lz4.c"
     sanitize "lz4hc.c"
-    sanitize "lz4opt.h"
-    sanitize "lz4frame.c"
 )
 
 let enusure7Zexe () = 
